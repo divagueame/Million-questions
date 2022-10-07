@@ -2,8 +2,11 @@ one:
   email: chiki@chiki.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'chikipassword') %>
   # admin: true
-
 two:
   email: mike@mike.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'chikipassword') %>
+  # admin: false
+three:
+  email: pay@pay.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'chikipassword') %>
   # admin: false

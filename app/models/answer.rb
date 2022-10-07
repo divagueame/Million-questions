@@ -1,13 +1,12 @@
 class Answer < ApplicationRecord
   belongs_to :user
   belongs_to :question
-  before_validation :add_user
-  validates_uniqueness_of :user, :scope => :question
-  # accepts_nested_attributes_for :question
+  
+  validates :user_id, uniqueness: {
+    scope: [ :question_id ]
+  }
 
-  private
-  def add_user
-    p 'CALLBACK IN MODEL'
-    self.user = current_user
+  def correct?
+    self.question.correct_answer.casecmp?(self.title)
   end
 end

@@ -3,8 +3,8 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
   
   def index
-    # @questions = Question.all
-    @questions = Question.all
+    @questions = current_user.unanswered_questions
+
   end
 
 
