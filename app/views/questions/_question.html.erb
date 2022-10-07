@@ -9,9 +9,16 @@
     <%= question.description %>
   </p>
 
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Correct answer:</strong>
+    <%= question.correct_answer %>
+  </p>
+
   <% if action_name != "show" %>
     <%= link_to "Show this question", question, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this question', edit_question_path(question), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
+
+  <%= link_to 'Answer!', new_question_answer_path(question), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
 </div>

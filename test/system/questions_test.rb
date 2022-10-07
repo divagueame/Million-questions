@@ -14,6 +14,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit questions_url
     click_on "New question"
 
+    fill_in "Correct answer", with: @question.correct_answer
     fill_in "Description", with: @question.description
     fill_in "Title", with: @question.title
     click_on "Create Question"
@@ -26,6 +27,7 @@ class QuestionsTest < ApplicationSystemTestCase
     visit question_url(@question)
     click_on "Edit this question", match: :first
 
+    fill_in "Correct answer", with: @question.correct_answer
     fill_in "Description", with: @question.description
     fill_in "Title", with: @question.title
     click_on "Update Question"

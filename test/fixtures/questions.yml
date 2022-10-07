@@ -1,9 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  title: MyText
-  description: MyText
+  title: How many moons does Earth have?
+  description: You would be surprised...
+  correct_answer: One
 
 two:
-  title: MyText
-  description: MyText
+  title: What is the capital of Ukraine?
+  description: Many revolts recently there...
+  correct_answer: Kiev
