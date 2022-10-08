@@ -3,6 +3,9 @@ class GameController < ApplicationController
   def index
   end
 
+  def report
+  end
+
 
   private
 
