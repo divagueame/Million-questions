@@ -3,12 +3,15 @@ one:
   title: one
   user: one
   question: one
+  correct: true
 # Wrong Answer
 two:
   title: MyText
   user: one
   question: two
+  correct: false
 three:
   title: MyText
   user: two
   question: one
+  correct: false

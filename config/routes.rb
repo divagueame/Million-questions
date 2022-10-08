@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'scoreboard', to: 'scoreboard#index'
 
   resources :questions do
     resources :answers 
