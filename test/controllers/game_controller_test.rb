@@ -26,4 +26,27 @@ class GameControllerTest < ActionDispatch::IntegrationTest
     get game_url
     assert_response :success
   end
+
+
+  test "should delete game and redirect to game" do
+    sign_in @user_game_ended
+
+    assert_difference("Game.count", -1) do
+    delete game_url
+    end
+    assert_redirected_to game_url
+  end
+
+
+
+  test "should not delete game and redirect to game" do
+    sign_in @user_game_going
+    
+    assert_difference("Game.count", 0) do
+      delete game_url
+    end
+    assert_redirected_to game_url
+  end
+
+
 end
