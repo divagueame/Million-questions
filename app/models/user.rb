@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :answers, dependent: :destroy
- 
+  has_one :game, dependent: :destroy
+
   def unanswered_questions
     user_answers = self.answers.pluck(:question_id)
     Question.where.not(id: user_answers)
@@ -12,6 +13,10 @@ class User < ApplicationRecord
 
   def correct_answers
     self.answers.select{ |answer| answer.correct? }
+  end
+
+  def is_playing
+    self.game.present? && self.game.is_playing
   end
 
 end

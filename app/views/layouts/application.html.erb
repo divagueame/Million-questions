@@ -12,13 +12,7 @@
   </head>
 
   <body>
-  <% if current_user %>
-    <div class="flex gap-4">
-      <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
-      <%= current_user.email %>
-      <%= current_user.unanswered_questions.count %>
-    </div>
-  <% end %>
+    <%= render 'partials/nav' %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>

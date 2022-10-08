@@ -1,0 +1,7 @@
+one:
+  is_playing: false
+  user: one
+
+two:
+  is_playing: true
+  user: two
