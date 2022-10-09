@@ -1,7 +1,7 @@
-<div>
-  <h1 class="font-bold text-4xl">Top 10 </h1>
+<div class='mx-auto'>
+  <h1 class="font-bold text-4xl text-center">Top 10 </h1>
   
-  <div id="user_cards" class="min-w-full flex flex-col">
-    <%= render :partial => "user_card", :collection => @top_10_users, :as => :user %>
+  <div id="user_cards" class="min-w-full flex flex-col py-8 gap-6">
+      <%= render :partial => "user_card", :collection => @top_10_users, :as => :user %>
   </div>
 </div>

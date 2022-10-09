@@ -19,7 +19,7 @@ class User < ApplicationRecord
     self.game.present? && self.game.is_playing
   end
 
-  def game_ended
+  def finished_game
     self.game.present? && !self.game.is_playing
   end
 end

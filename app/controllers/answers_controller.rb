@@ -24,7 +24,17 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to questions_url, notice: "Answer was successfully created." }
+
+        @remaining_questions = current_user.unanswered_questions
+        if @remaining_questions.any?
+          @answer = @remaining_questions.first.answers.build   
+          format.turbo_stream
+        else
+          format.html {
+            redirect_to game_report_path, notice: "Game over!" 
+           }
+        end
+
       else
         format.html { render :new, status: :unprocessable_entity }
       end

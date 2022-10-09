@@ -1,0 +1,5 @@
+<%= turbo_stream.update "question_card",
+    src: "questions/#{@answer.question.id}/answers/new", 
+    partial: "answers/answer_card", 
+    locals: { answer: @answer }
+%>
