@@ -1,9 +1,12 @@
-<div class="flex gap-4 w-full bg-green-200 items-center">
+<div class="flex gap-4 w-full items-center">
     <%= link_to 'Home', root_path, class: 'bg-purple-200 py-1 px-4 rounded-full shadow-sm' %>
+    <%= link_to 'Scoreboard', scoreboard_path, class: 'bg-orange-200 py-1 px-4 rounded-full shadow-sm'  unless controller_name === 'scoreboard' %>    
     <% if current_user %>
+            <%= link_to 'Game', game_path, class: 'bg-orange-200 py-1 px-4 rounded-full shadow-sm' unless controller_name === 'game' %>
+            <%= current_user.unanswered_questions.count %>
             <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
             <%= current_user.email %>
-            <%= current_user.unanswered_questions.count %>
+            
     <% else %>
 
 

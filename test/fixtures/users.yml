@@ -10,3 +10,15 @@ three:
   email: pay@pay.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'chikipassword') %>
   # admin: false
+four:
+  email: chiki1@chiki.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'chikipassword') %>
+  # admin: true
+five:
+  email: chiki2@chiki.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'chikipassword') %>
+  # admin: false
+six:
+  email: chiki3@chiki.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'chikipassword') %>
+  # admin: false

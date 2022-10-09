@@ -9,7 +9,7 @@ class QuestionsTest < ApplicationSystemTestCase
   test "visiting the index" do
     visit questions_url
     assert_selector "h1", text: "Questions"
-    assert_selector ".question", count: 2
+    assert_selector ".question", count: 3
   end
 
   # test "should create question" do

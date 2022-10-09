@@ -17,3 +17,8 @@ four:
   title: Who is the best doggie?
   description: Fluffy and calm
   correct_answer: Nala
+
+five:
+  title: Who is the second best doggie?
+  description: Fucking crazy
+  correct_answer: Niche

@@ -11,9 +11,9 @@ class GameController < ApplicationController
 
   def destroy
     if current_user.game_ended
-    @game = Game.find_by(user_id: current_user.id)
-    @game.destroy
-    message = "Good luck this time!"
+      @game = Game.find_by(user_id: current_user.id)
+      @game.destroy
+      message = "Good luck this time!"
     else
       message = "Keep going"
     end

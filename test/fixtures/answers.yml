@@ -15,3 +15,67 @@ three:
   user: two
   question: one
   correct: false
+# Correct Answers for user 4
+four:
+  title: one
+  user: four
+  question: one
+  correct: true
+five:
+  title: kiev
+  user: four
+  question: two
+  correct: true
+six:
+  title: pizza
+  user: four
+  question: three
+  correct: true
+seven:
+  title: nala
+  user: four
+  question: four
+  correct: true
+eight:
+  title: niche
+  user: four
+  question: five
+  correct: true
+# Correct Answer for user 6
+nine:
+  title: one
+  user: four
+  question: one
+  correct: true
+# Correct Answers for user 5. First wrong
+ten:
+  title: wrong answer
+  user: five
+  question: one
+  correct: false
+eleven:
+  title: kiev
+  user: five
+  question: two
+  correct: true
+twelve:
+  title: pizza
+  user: five
+  question: three
+  correct: true
+thirteen:
+  title: nala
+  user: five
+  question: four
+  correct: true
+fourteen:
+  title: niche
+  user: five
+  question: five
+  correct: true
+  # Correct Answer for user 6
+fifteen:
+  title: kiev
+  user: six
+  question: two
+  correct: true
