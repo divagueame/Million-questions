@@ -15,38 +15,38 @@ class GameControllerTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "should get index if game is going" do
-    sign_in @user_game_going 
-    get game_url
-    assert_response :success
-  end
+  # test "should get index if game is going" do
+  #   sign_in @user_game_going 
+  #   get game_url
+  #   assert_response :success
+  # end
 
-  test "should create game if user no game" do
-    sign_in @user_no_game 
-    get game_url
-    assert_response :success
-  end
-
-
-  test "should delete game and redirect to game" do
-    sign_in @user_game_ended
-
-    assert_difference("Game.count", -1) do
-    delete game_url
-    end
-    assert_redirected_to game_url
-  end
+  # test "should create game if user no game" do
+  #   sign_in @user_no_game 
+  #   get game_url
+  #   assert_response :success
+  # end
 
 
+  # test "should delete game and redirect to game" do
+  #   sign_in @user_game_ended
 
-  test "should not delete game and redirect to game" do
-    sign_in @user_game_going
+  #   assert_difference("Game.count", -1) do
+  #   delete game_url
+  #   end
+  #   assert_redirected_to game_url
+  # end
+
+
+
+  # test "should not delete game and redirect to game" do
+  #   sign_in @user_game_going
     
-    assert_difference("Game.count", 0) do
-      delete game_url
-    end
-    assert_redirected_to game_url
-  end
+  #   assert_difference("Game.count", 0) do
+  #     delete game_url
+  #   end
+  #   assert_redirected_to game_url
+  # end
 
 
 end

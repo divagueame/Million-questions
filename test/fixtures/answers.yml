@@ -79,3 +79,20 @@ fifteen:
   user: six
   question: two
   correct: true
+# Correct Answer
+sixteen:
+  title: one
+  user: one
+  question: three
+  correct: false
+# Wrong Answer
+seventeen:
+  title: MyText
+  user: one
+  question: four
+  correct: false
+eighteen:
+  title: one
+  user: one
+  question: five
+  correct: false
