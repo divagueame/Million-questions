@@ -15,11 +15,4 @@ class User < ApplicationRecord
     self.answers.select{ |answer| answer.correct? }
   end
 
-  def is_playing
-    self.game.present? && self.game.is_playing
-  end
-
-  def finished_game
-    self.game.present? && !self.game.is_playing
-  end
 end

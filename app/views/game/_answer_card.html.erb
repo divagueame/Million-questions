@@ -1,5 +1,5 @@
 
-<div class='bg-purple-200 rounded-sm shadow-sm px-4 py-2'>
+<div class='rounded-sm shadow-sm px-4 py-2 <%=  answer.correct ? 'bg-green-10' : 'bg-red-300' %>'>
+    <%= image_tag (answer.correct) ? 'right.svg' : 'wrong.svg', class: "w-8 inline-block" %>
     <%= answer.question.title %>
-    <%= answer.correct%>
 </div>

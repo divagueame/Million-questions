@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_08_191507) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.boolean "is_playing", default: true
+    t.boolean "ended", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

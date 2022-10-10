@@ -1,7 +1,7 @@
 one:
-  is_playing: false
+  ended: false
   user: one
 
 two:
-  is_playing: true
+  ended: true
   user: two

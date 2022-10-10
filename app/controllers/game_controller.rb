@@ -2,19 +2,29 @@ class GameController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    redirect_to game_report_path if current_user.finished_game
+    # redirect_to game_report_path if current_user.game.ended
     @game = Game.find_or_create_by(user_id: current_user.id)
-    @question = current_user.unanswered_questions.first
-    @answer = @question.answers.build
+    # p @game.
+    # return
+    questions_left = current_user.unanswered_questions
+    if questions_left.any? 
+      @question = questions_left.first
+
+    else
+      current_user.answers.destroy_all
+      @question = current_user.unanswered_questions.first
+      @game.update(ended:false)
+    end
+      @answer = @question.answers.build
   end
 
   def report
-    redirect_to game_path if !current_user.finished_game
+    redirect_to game_path if !current_user.game.ended
     @user_answers = Answer.where(user_id: current_user.id)
   end
 
   def destroy
-    if current_user.finished_game
+    if current_user.game.ended
       @game = Game.find_by(user_id: current_user.id)
       @game.destroy
       current_user.answers.destroy_all
@@ -34,7 +44,7 @@ class GameController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:is_playing, :user_id)
+    params.require(:game).permit(:ended, :user_id)
   end
 
 

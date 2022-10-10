@@ -23,8 +23,8 @@ class Answer < ApplicationRecord
   end
 
   def update_game_status    
-    if self.user.unanswered_questions.any?
-      self.user.game.update(is_playing: false)
+    if !self.user.unanswered_questions.any?
+      self.user.game.update(ended: true)
     end
   end
 end
