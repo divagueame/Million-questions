@@ -1,10 +1,10 @@
 <div class="flex gap-4 w-full items-center">
-    <%= link_to 'Home', root_path, class: 'bg-purple-200 py-1 px-4 rounded-full shadow-sm' %>
-    <%= link_to 'Scoreboard', scoreboard_path, class: 'bg-orange-200 py-1 px-4 rounded-full shadow-sm'  unless controller_name === 'scoreboard' %>    
+    <%= link_to 'Home', root_path, class: 'bg-purple-200 hover:bg-purple-400 py-1 px-4 rounded-full shadow-sm' %>
+    <%= link_to 'Scoreboard', scoreboard_path, class: 'bg-orange-200 hover:bg-orange-300 py-1 px-4 rounded-full shadow-sm'  unless controller_name === 'scoreboard' %>    
     <% if current_user %>
             <%= link_to 'Game', game_path, class: 'bg-orange-200 py-1 px-4 rounded-full shadow-sm' unless controller_name === 'game' %>
             <%= current_user.unanswered_questions.count %>
-            <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+            <%= button_to 'Log out', destroy_user_session_path, class: 'px-4 py-1 rounded-full bg-green-200 hover:bg-green-400', method: :delete %>
             <%= current_user.email %>
             
     <% else %>
