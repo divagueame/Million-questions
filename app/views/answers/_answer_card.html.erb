@@ -1,4 +1,5 @@
-<div class="mx-auto md:w-2/3 w-full">
-    <h1 class="font-bold text-4xl"><%= answer.question.title %></h1>
+<div class="mx-auto md:w-2/3 w-full relative overflow-hidden bsg-green-300 p-4 rounded-sm" data-controller="answer-card">
+    <h1 class="font-bold text-4xl ease-in duration-300" data-answer-card-target="question"><%= answer.question.title %></h1>
     <%= render "form", question: answer.question, answer: answer %>
+    <div data-answer-card-target='layover' class="absolute bg-white bg-red-200 left-0 top-0 right-0 bottom-0 translate-x-full ease-in-out duration-300"></div>
 </div>

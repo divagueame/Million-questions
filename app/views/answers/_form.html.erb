@@ -1,4 +1,4 @@
-<%= form_with(model: [question, answer], class: "contents") do |form| %>
+<%= form_with(model: [question, answer], class: "contents", data: {action: "answer-card#validate"}) do |form| %>
   <% if answer.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
@@ -11,12 +11,11 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="my-5 w-full ease-out duration-300 origin-left">
+    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none mt-2 w-full scale-x-100 ", autocomplete: "off", "data-answer-card-target": "answerInput" %>
   </div>
 
   <div class="inline">
-    <%= form.submit 'Submit', class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit 'Submit', class: "rounded-lg py-3 px-5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer", "data-answer-card-target": "answerSubmit"  %>
   </div>
 <% end %>
