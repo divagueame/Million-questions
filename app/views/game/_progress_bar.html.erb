@@ -1,0 +1,14 @@
+  <div id="progress" data-controller="progress" data-progress-answered-value="<%= current_user.game.questions_answered %>" data-progress-questions-value="<%= Question.all.count %>">
+    <div>
+      Question
+      <span data-progress-target="counter"></span>
+      /
+      <%= Question.all.count %>
+    </div>
+        
+    <div class="w-full mb-20 rounded-full overflow-hidden bg-purple-100">
+      <div data-progress-target="bar" class="h-1
+            bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-purple-200 via-purple-400 to-purple-800
+            ease-out duration-300"></div>
+    </div>
+  </div>

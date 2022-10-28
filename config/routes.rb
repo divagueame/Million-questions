@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   get 'home', to: 'home#index', as: 'home'
   get 'game', to: 'game#index', as: 'game'
   delete 'game', to: "game#destroy"

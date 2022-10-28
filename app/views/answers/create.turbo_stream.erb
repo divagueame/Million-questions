@@ -3,3 +3,9 @@
     partial: "answers/answer_card", 
     locals: { answer: @answer }
 %>
+
+<%= turbo_stream.update "progress_bar",
+    src: "progress_bar/index",
+    partial: "game/progress_bar", 
+    locals: { game: current_user.game }
+%>

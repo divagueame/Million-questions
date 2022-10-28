@@ -3,9 +3,8 @@ class GameController < ApplicationController
 
   def index
     # redirect_to game_report_path if current_user.game.ended
-    @game = Game.find_or_create_by(user_id: current_user.id)
-    # p @game.
-    # return
+    @game = Game.find_or_create_by(user_id: current_user.id) 
+    
     questions_left = current_user.unanswered_questions
     if questions_left.any? 
       @question = questions_left.first

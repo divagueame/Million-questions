@@ -6,10 +6,11 @@ export default class extends Controller {
   initialize() {
   // this.element.classList.remove('opacity-100')
   }
-
+ 
   connect() {
-    this.answerInputTarget.focus();
-  
+    this.answerInputTarget.focus(); 
+    
+    // progress_bar_identifier
     setTimeout(() => {
       // this.element.classList.remove('opacity-0');
       // this.element.classList.add('opacity-100')
@@ -17,27 +18,27 @@ export default class extends Controller {
     }, 1800);
   }
 
-  disconnect() {
-    console.log("Answer card disconnected!");
-    // this.element.classList.add('opacity-0');
-    // this.element.classList.remove('opacity-100')
-  }
-
   validate(e){
+    
     if(!this.answerInputTarget.textLength){
       e.preventDefault();
       this.answerInputTarget.classList.add('invalid-text-input');
       
       setTimeout(() => {
         this.answerInputTarget.classList.remove('invalid-text-input')
-
       }, 750);
+
     } else {
       e.preventDefault();
-       
+      
+      document.getElementById("progress").progress.update()
+
       this.answerSubmitTarget.disabled = true;
       this.answerSubmitTarget.value = 'Next...'
+      this.answerSubmitTarget.classList.remove('bg-blue-600')
+      this.answerSubmitTarget.classList.remove('hover:bg-blue-600')
       this.answerSubmitTarget.classList.add('bg-emerald-500')
+      this.answerSubmitTarget.classList.add('hover:bg-emerald-400')
       this.layoverTarget.classList.add('translate-y-0')
       // this.questionTarget.classList.add('opacity-0');
       

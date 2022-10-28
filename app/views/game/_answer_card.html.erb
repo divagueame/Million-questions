@@ -5,7 +5,7 @@
         <%= answer.question.title %><br>
         <%= answer.question.correct_answer %>
         <% if !answer.correct %>
-            <span class='ml-2 line-through text-red-700'>(<%= answer.question.correct_answer %>)</span>
+            <span class='ml-2 line-through text-red-700'>(<%= answer.title %>)</span>
         <% end %>
     </div>
 </div>
