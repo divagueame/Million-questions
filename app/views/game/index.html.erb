@@ -3,7 +3,6 @@
   <%= render :partial => 'game/progress_bar' %>
 
   <%= turbo_frame_tag "question_card", src: "questions/#{@answer.question.id}/answers/new" do %>
-      <h1 class="font-bold text-4xl mb-8"> Loading...</h1>
   <% end %>
 
 </div>
