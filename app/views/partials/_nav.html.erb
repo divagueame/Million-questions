@@ -1,12 +1,13 @@
-<div class="flex gap-4 w-full items-center my-2 mx-8">
-    <%= link_to 'Home', root_path, class: "btn btn-primary #{'btn-active' if current_page?(root_path)}" %>
-    <%= link_to 'Top 10', scoreboard_path, class: "btn btn-primary #{'btn-active' if controller_name === 'scoreboard'}" %>    
+<div class="flex gap-4 w-full items-center py-2 px-8">
+    <%= link_to 'Home', root_path, class: "btn btn-primary#{' btn-active' if current_page?(root_path)}" %>
+    <%= link_to 'Top 10', scoreboard_path, class: "btn btn-primary#{' btn-active' if controller_name === 'scoreboard'}" %>    
     <% if current_user %>
-        <%= link_to 'Game', game_path, class: "btn btn-primary  #{'btn-active' if controller_name === 'game'}" %>
+        <%= link_to 'Game', game_path, class: "btn btn-primary#{' btn-active' if controller_name === 'game'}" %>
         <span class="ml-auto mr-16">
-        <%= button_to 'Log out', destroy_user_session_path, class: 'btn btn-secondary', method: :delete %>
+            <%= button_to 'Log out', destroy_user_session_path, class: 'btn btn-secondary', method: :delete %>
         </span>
     <% else %>
-
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary ml-auto#{' btn-active' if current_page?(new_user_registration_path)}" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn btn-transparent#{' btn-active' if current_page?(new_user_session_path)}" %>
     <% end %>
 </div>

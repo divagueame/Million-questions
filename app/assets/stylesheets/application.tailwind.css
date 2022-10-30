@@ -3,19 +3,30 @@
 @tailwind utilities;
 
 
-
 @layer components {
   .btn {
-    @apply font-bold py-1 px-4 rounded-full hover:shadow-sm  border-2 border-transparent text-gray-700 hover:text-gray-900 ;
+    @apply font-bold py-1 px-4 rounded-full hover:shadow-sm  border-2 border-transparent text-gray-700 hover:text-gray-900;
   }
   .btn-primary {
-    @apply bg-white hover:bg-indigo-100
+    @apply bg-white hover:bg-indigo-100;
   }
   .btn-active {
     @apply pointer-events-none cursor-default border-indigo-300 text-gray-900
   }
   .btn-secondary {
     @apply bg-sky-400 hover:bg-sky-300  text-white hover:text-white 
+  }
+  .btn-transparent {
+    @apply hover:underline
+  }
+  .btn-transparent.btn-active {
+    @apply underline border-transparent bg-indigo-100
+  }
+  .input-field {
+    @apply rounded-full;
+  }
+  .submit {
+    @apply rounded-full bg-sky-300 px-6 py-2 font-bold
   }
 }
 
