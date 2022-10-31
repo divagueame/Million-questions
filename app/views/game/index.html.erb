@@ -1,8 +1,14 @@
-<div class="w-full relative">
+<main class="container mx-auto mt-28 px-5 flex">
+  <div class="w-full relative">
 
-  <%= render :partial => 'game/progress_bar' %>
+    <%= render :partial => 'game/progress_bar' %>
 
-  <%= turbo_frame_tag "question_card", src: "questions/#{@answer.question.id}/answers/new" do %>
-  <% end %>
+    <%= turbo_frame_tag "question_card", src: "questions/#{@answer.question.id}/answers/new" do %>
+    <% end %>
 
+  </div>
+</main>
+
+<div class="mt-auto py-12 px-12">  
+    <%= link_to "Stop game", finish_path, class: "text-md ring-offset-8 px-4 py-2 ring ring-pink-500 text-slate-800 font-bold rounded-sm hover:ring-pink-600 transition-all", data: { turbo_method: :get, turbo_confirm: "Are you sure?" } %>
 </div>

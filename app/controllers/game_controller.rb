@@ -8,7 +8,6 @@ class GameController < ApplicationController
     questions_left = current_user.unanswered_questions
     if questions_left.any? 
       @question = questions_left.first
-
     else
       current_user.answers.destroy_all
       @question = current_user.unanswered_questions.first
@@ -20,6 +19,11 @@ class GameController < ApplicationController
   def report
     redirect_to game_path if !current_user.game.ended
     @user_answers = Answer.where(user_id: current_user.id)
+  end
+
+  def finish
+    current_user.game.update(ended: true)
+    redirect_to game_report_path
   end
 
   def destroy
@@ -35,7 +39,6 @@ class GameController < ApplicationController
     
   end
 
-
   private
 
   def set_game
@@ -45,6 +48,5 @@ class GameController < ApplicationController
   def game_params
     params.require(:game).permit(:ended, :user_id)
   end
-
 
 end

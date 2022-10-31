@@ -1,0 +1,6 @@
+<% if notice.present? %>
+    <div data-controller="flash" class="absolute right-0 p-12 bottom-4 translate-x-full transition-all">
+        <div class="py-4 px-6 bg-green-50 mb-5 text-green-700 font-medium rounded-lg inline-block text-2xl border-2 border-stone-200" id="notice">
+            <%= notice %>
+        </div>
+<% end %>
