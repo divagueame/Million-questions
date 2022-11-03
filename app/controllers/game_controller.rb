@@ -23,6 +23,7 @@ class GameController < ApplicationController
 
   def finish
     current_user.game.update(ended: true)
+    current_user.game.create_report
     redirect_to game_report_path
   end
 

@@ -1,7 +1,12 @@
 <div class='mx-auto'>
   <h1 class="font-bold text-4xl text-center">Top 10 </h1>
   
-  <div id="user_cards" class="min-w-full flex flex-col py-8 gap-6">
+  <div id="user_cards" class="hidden min-w-full flex flex-col py-8 gap-6">
       <%= render :partial => "user_card", :collection => @top_10_users, :as => :user %>
+  </div>
+
+    <br>
+  <div id="report_cards" class="min-w-full flex flex-col py-8 gap-6 bg-violet-400 rounded-sm shadow-sm">
+      <%= render :partial => "report_card", :collection => @top_10_reports, :as => :report %>
   </div>
 </div>

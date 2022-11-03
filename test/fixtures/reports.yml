@@ -1,0 +1,42 @@
+one:
+  answers: 10
+  correct: 7
+  questions: 12
+  game: one
+  user: one
+  percentage: 75.45
+one:
+  answers: 7
+  correct: 7
+  questions: 121
+  game: one
+  user: two
+  percentage: 4.50
+three:
+  answers: 22
+  correct: 12
+  questions: 123
+  game: three
+  user: three
+  percentage: 9.50
+four: 
+  answers: 33
+  correct: 12
+  questions: 124
+  game: four
+  user: four
+  percentage: 10.04
+five:
+  answers: 55
+  correct: 44
+  questions: 55
+  game: five
+  user: five
+  percentage: 80.00
+six:
+  answers: 10
+  correct: 7
+  questions: 44
+  game: one
+  user: six
+  percentage: 15.05

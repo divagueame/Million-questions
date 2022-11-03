@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :answers, dependent: :destroy
   has_one :game, dependent: :destroy
-
+  has_many :reports, dependent: :destroy
+  
   def unanswered_questions
     user_answers = self.answers.pluck(:question_id)
     Question.where.not(id: user_answers)
