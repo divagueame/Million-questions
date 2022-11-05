@@ -1,4 +1,4 @@
-<div class='mx-auto'>
+<div class='mx-auto w-1/2'>
   <h1 class="font-bold text-4xl text-center">Top 10 </h1>
   
   <div id="user_cards" class="hidden min-w-full flex flex-col py-8 gap-6">
@@ -6,7 +6,7 @@
   </div>
 
     <br>
-  <div id="report_cards" class="min-w-full flex flex-col py-8 gap-6 bg-violet-400 rounded-sm shadow-sm">
+  <div id="report_cards" class="w-full flex flex-col py-8 gap-6 rounded-lg shadow-xl">
       <%= render :partial => "report_card", :collection => @top_10_reports, :as => :report %>
   </div>
 </div>

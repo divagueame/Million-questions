@@ -2,25 +2,40 @@ class Report < ApplicationRecord
   belongs_to :game
   belongs_to :user
 
-  after_initialize :add_user
+  before_validation :add_user
   before_validation :add_percentage
 
+  scope :highest, -> { order(percentage: :desc) }
 
-  def self.top(limit)
-    Report.where('questions > ?', Question.all.count - 10).order(percentage: :desc).limit(limit)
+  def self.top_by_user(limit)
+    where('answers >= ?', 6)
+      .group(:user_id)
+      .maximum(:percentage)
+      .sort_by(&:last)
+      .reverse
+      .first(limit)
+      .to_h
+  end
+
+  def self.top_by_user_2(_limit)
+    where('answers >= ?', 6)
+    .select('MAX(percentage) AS percentage', 'user_id')
+    .group(:user_id)
+  end
+
+  def is_top_10?
+    self.percentage > self.class.highest.first(10).last.percentage
   end
 
   private
 
   def add_user
-    self.user_id = self.game&.user_id
+    self.user_id = game&.user_id
   end
 
   def add_percentage
-    percentage = (100 * self.correct) / self.questions
+    percentage = (100 * correct) / questions
     percentage = percentage.to_f.round(2)
     self.percentage = percentage
   end
-
-
 end

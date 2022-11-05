@@ -22,3 +22,13 @@ five:
   title: Who is the second best doggie?
   description: Fucking crazy
   correct_answer: Niche
+
+six:
+  title: Country with wine and bread
+  description: Fucking crazy
+  correct_answer: France
+
+seven:
+  title: Italians drink...
+  description: Fucking crazy
+  correct_answer: Coffee

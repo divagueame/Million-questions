@@ -16,4 +16,7 @@ class User < ApplicationRecord
     self.answers.select{ |answer| answer.correct? }
   end
 
+  def max_score
+    self.reports.order(percentage: :desc).first
+  end
 end
