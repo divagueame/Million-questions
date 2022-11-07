@@ -28,6 +28,9 @@
   .submit {
     @apply rounded-full bg-sky-300 px-6 py-2 font-bold
   }
+  .submit-answer {
+    @apply rounded-lg py-3 px-5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer
+  }
   .invalid-text-input {
     @apply bg-rose-50 ring-1 ring-offset-4 ring-rose-300
   }
