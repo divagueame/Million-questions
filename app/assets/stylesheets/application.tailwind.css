@@ -28,6 +28,9 @@
   .submit {
     @apply rounded-full bg-sky-300 px-6 py-2 font-bold
   }
+  .invalid-text-input {
+    @apply bg-rose-50 ring-1 ring-offset-4 ring-rose-300
+  }
 }
 
 

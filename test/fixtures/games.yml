@@ -1,8 +1,8 @@
 one:
-  ended: false
+  ended: true
   user: one
 two:
-  ended: true
+  ended: false
   user: two
 three:
   ended: true
