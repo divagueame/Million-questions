@@ -5,7 +5,6 @@ class CreateReports < ActiveRecord::Migration[7.0]
       t.integer :correct
       t.integer :questions
       t.float :percentage
-      t.references :game, foreign_key: true
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

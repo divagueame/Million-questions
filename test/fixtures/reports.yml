@@ -2,76 +2,65 @@ one:
   answers: 7
   correct: 7
   questions: 7
-  game: one
   user: one
   percentage: 100.00
 two:
   answers: 7
   correct: 7
   questions: 7
-  game: one
   user: two
   percentage: 100.00
 three:
   answers: 7
   correct: 7
   questions: 7
-  game: three
   user: three
   percentage: 100.00
 four: 
   answers: 6
   correct: 1
   questions: 7
-  game: four
   user: four
   percentage: 25.55
 five:
   answers: 6
   correct: 1
   questions: 7
-  game: five
   user: five
   percentage: 25.55
 six:
   answers: 7
   correct: 6
   questions: 7
-  game: one
   user: six
   percentage: 86.55
 seven:
   answers: 7
   correct: 6
   questions: 7
-  game: one
   user: one
   percentage: 86.55
 eight:
   answers: 7
   correct: 7
   questions: 7
-  game: one
   user: one
   percentage: 100.00
 nine:
   answers: 7
   correct: 7
   questions: 7
-  game: one
   user: one
   percentage: 33.00
 ten:
   answers: 3
   correct: 6
   questions: 7
-  game: one
   user: three
   percentage: 50.00
 eleven:
   answers: 1
   correct: 1
   questions: 7
-  game: one
   user: one
   percentage: 2.00

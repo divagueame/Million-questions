@@ -46,11 +46,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_073415) do
     t.integer "correct"
     t.integer "questions"
     t.float "percentage"
-    t.bigint "game_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_reports_on_game_id"
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
@@ -69,6 +67,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_073415) do
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
   add_foreign_key "games", "users"
-  add_foreign_key "reports", "games"
   add_foreign_key "reports", "users"
 end

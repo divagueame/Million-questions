@@ -1,8 +1,7 @@
 class Report < ApplicationRecord
-  belongs_to :game
   belongs_to :user
 
-  before_validation :add_user
+  validates_presence_of :percentage
   before_validation :add_percentage
 
   scope :highest, -> { order(percentage: :desc) }
@@ -28,10 +27,6 @@ class Report < ApplicationRecord
   end
 
   private
-
-  def add_user
-    self.user_id = game&.user_id
-  end
 
   def add_percentage
     percentage = (100 * correct) / questions
