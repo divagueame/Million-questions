@@ -2,9 +2,7 @@
   <div class="w-full relative">
 
     <%= render :partial => 'game/progress_bar' %>
-
-    <%= turbo_frame_tag "question_card", src: "questions/#{@answer.question.id}/answers/new" do %>
-    <% end %>
+    <%= turbo_frame_tag "question_card", src: "questions/#{@answer.question.id}/answers/new" %>
 
   </div>
 </main>

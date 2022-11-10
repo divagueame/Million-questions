@@ -4,7 +4,11 @@ class Report < ApplicationRecord
   validates_presence_of :percentage
   before_validation :add_percentage
 
+  after_create :add_position
   scope :highest, -> { order(percentage: :desc) }
+  scope :from_this_month, lambda {
+                            where('reports.created_at > ? AND reports.created_at < ?', Time.now.beginning_of_month, Time.now.end_of_month)
+                          }
 
   def self.top_by_user(limit)
     where('answers >= ?', 6)
@@ -18,12 +22,25 @@ class Report < ApplicationRecord
 
   def self.top_by_user_2(_limit)
     where('answers >= ?', 6)
-    .select('MAX(percentage) AS percentage', 'user_id')
-    .group(:user_id)
+      .select('MAX(percentage) AS percentage', 'user_id')
+      .group(:user_id)
   end
 
   def is_top_10?
-    self.percentage > self.class.highest.first(10).last.percentage
+    percentage > self.class.highest.first(10).last.percentage
+  end
+
+  def add_position
+    position = Report
+               .from_this_month
+               .where('answers >= ?', (Question.count - 2))
+               .order(:percentage)
+               .all
+               .find_index do |report|
+      report.id == id
+    end
+
+    self.position = position
   end
 
   private

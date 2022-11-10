@@ -6,17 +6,22 @@ class User < ApplicationRecord
   has_many :answers, dependent: :destroy
   has_one :game, dependent: :destroy
   has_many :reports, dependent: :destroy
-  
+  after_create :create_game
+
   def unanswered_questions
-    user_answers = self.answers.pluck(:question_id)
+    user_answers = answers.pluck(:question_id)
     Question.where.not(id: user_answers)
   end
 
   def correct_answers
-    self.answers.select{ |answer| answer.correct? }
+    answers.select{ |answer| answer.correct? }
   end
 
   def max_score
-    self.reports.order(percentage: :desc).first
+    reports.order(percentage: :desc).first
+  end
+
+  def create_game
+    Game.create(user_id: id)
   end
 end

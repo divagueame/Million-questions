@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   delete 'game', to: "game#destroy"
   get 'finish', to: 'game#finish', as: 'finish'
 
-  get 'game/report', to: 'game#report'#e, as: 'game_report'
+  get 'game/report', to: 'game#report'
   get 'scoreboard', to: 'scoreboard#index'
 
   resources :questions do
-    resources :answers 
+    resources :answers
   end
-  
+
   devise_for :users
   root 'home#index'
 end
