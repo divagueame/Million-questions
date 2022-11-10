@@ -17,8 +17,9 @@ class GameController < ApplicationController
   def report
     redirect_to game_path unless current_user.game.ended
     @user_answers = Answer.where(user_id: current_user.id)
+    @percentile = current_user.reports.last.percentile
   end
-  
+
   def finish
     current_user.game.update(ended: true)
     # current_user.game.create_report

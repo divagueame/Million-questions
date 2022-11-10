@@ -4,7 +4,7 @@ class Report < ApplicationRecord
   validates_presence_of :percentage
   before_validation :add_percentage
 
-  after_create :add_position
+  after_create :add_percentile
   scope :highest, -> { order(percentage: :desc) }
   scope :from_this_month, lambda {
                             where('reports.created_at > ? AND reports.created_at < ?', Time.now.beginning_of_month, Time.now.end_of_month)
@@ -30,7 +30,13 @@ class Report < ApplicationRecord
     percentage > self.class.highest.first(10).last.percentage
   end
 
-  def add_position
+  def add_percentile
+    total = Report
+    .from_this_month
+    .where('answers >= ?', (Question.count - 2))
+    .order(:percentage)
+    .all.count
+
     position = Report
                .from_this_month
                .where('answers >= ?', (Question.count - 2))
@@ -39,8 +45,13 @@ class Report < ApplicationRecord
                .find_index do |report|
       report.id == id
     end
+    position += 1
 
-    self.position = position
+    percentile = (100 * position) / total
+
+    self.percentile = percentile.to_f.round(2)
+    self.save
+    
   end
 
   private
