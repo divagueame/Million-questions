@@ -32,3 +32,8 @@ seven:
   title: Italians drink...
   description: Fucking crazy
   correct_answer: Coffee
+
+eigth:
+  title: Chinese people drink...
+  description: Fucking crazy
+  correct_answer: Tea
