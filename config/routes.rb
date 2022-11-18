@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reports', to: "reports#index", as: 'reports'
   
   get 'home', to: 'home#index', as: 'home'
   get 'game', to: 'game#index', as: 'game'
